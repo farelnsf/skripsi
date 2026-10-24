@@ -67,6 +67,14 @@ elif menu == "Metode TextRank":
     except:
         st.warning("Gambar grafik batang TextRank belum diunggah.")
 
+    st.markdown("---")
+    st.subheader("📈 Metrik Evaluasi Kinerja (TextRank vs Human Expert)")
+    
+    m1, m2, m3 = st.columns(3)
+    m1.metric(label="Precision", value="100.00%")
+    m2.metric(label="Recall", value="70.00%")
+    m3.metric(label="F1-Score", value="82.35%")
+
 elif menu == "Metode LSA":
     st.header("📊 Hasil Peringkasan Teks - Algoritma LSA (Latent Semantic Analysis)")
     st.write("Menampilkan *Top-10* kalimat ringkasan keluhan utama berdasarkan reduksi matriks konsep tersembunyi (*TruncatedSVD*).")
@@ -95,3 +103,11 @@ elif menu == "Metode LSA":
             st.image("skripsi_textrank_lsa/confusion_matrix_lsa.png", caption="Confusion Matrix LSA (Human Evaluation)", use_container_width=True)
         except:
             st.warning("Gambar Confusion Matrix belum diunggah.")
+
+    st.markdown("---")
+    st.subheader("📈 Metrik Evaluasi Kinerja (LSA vs Human Expert)")
+    
+    l1, l2, l3 = st.columns(3)
+    l1.metric(label="Precision", value="60.00%")
+    l2.metric(label="Recall", value="100.00%")
+    l3.metric(label="F1-Score", value="75.00%")
