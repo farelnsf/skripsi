@@ -37,7 +37,7 @@ elif menu == "Metode TextRank":
     
     # Menampilkan Tabel CSV TextRank
     try:
-        df_tr = pd.read_csv("hasil_textrank.csv")
+        df_tr = pd.read_csv("skripsi_textrank_lsa/hasil_textrank.csv")
         st.subheader("Tabel Top-10 Ringkasan Kalimat (TextRank)")
         st.dataframe(df_tr, use_container_width=True)
     except Exception as e:
@@ -49,14 +49,14 @@ elif menu == "Metode TextRank":
     with col1:
         st.subheader("Visualisasi Jaringan Graf (NetworkX)")
         try:
-            st.image("visualisasi_graph_textrank.png", caption="Topologi Graf TextRank (Ambang Batas > 0.4)", use_container_width=True)
+            st.image("skripsi_textrank_lsa/visualisasi_graph_textrank.png", caption="Topologi Graf TextRank (Ambang Batas > 0.4)", use_container_width=True)
         except:
             st.warning("Gambar visualisasi graf belum diunggah.")
             
     with col2:
         st.subheader("Evaluasi Confusion Matrix (TextRank)")
         try:
-            st.image("confusion_matrix_textrank.png", caption="Confusion Matrix TextRank (Human Evaluation)", use_container_width=True)
+            st.image("skripsi_textrank_lsa/confusion_matrix_textrank.png", caption="Confusion Matrix TextRank (Human Evaluation)", use_container_width=True)
         except:
             st.warning("Gambar Confusion Matrix belum diunggah.")
 
@@ -66,7 +66,7 @@ elif menu == "Metode LSA":
     
     # Menampilkan Tabel CSV LSA
     try:
-        df_lsa = pd.read_csv("hasil_lsa.csv")
+        df_lsa = pd.read_csv("skripsi_textrank_lsa/hasil_lsa.csv")
         st.subheader("Tabel Top-10 Ringkasan Kalimat (LSA)")
         st.dataframe(df_lsa, use_container_width=True)
     except Exception as e:
@@ -78,13 +78,13 @@ elif menu == "Metode LSA":
     with col1:
         st.subheader("Distribusi Skor Signifikansi (L2-Norm)")
         try:
-            st.image("grafik_batang_top_lsa.png", caption="Grafik Batang Skor LSA", use_container_width=True)
+            st.image("skripsi_textrank_lsa/grafik_batang_top_lsa.png", caption="Grafik Batang Skor LSA", use_container_width=True)
         except:
             st.warning("Gambar grafik LSA belum diunggah.")
             
     with col2:
         st.subheader("Evaluasi Confusion Matrix (LSA)")
         try:
-            st.image("confusion_matrix_lsa.png", caption="Confusion Matrix LSA (Human Evaluation)", use_container_width=True)
+            st.image("skripsi_textrank_lsa/confusion_matrix_lsa.png", caption="Confusion Matrix LSA (Human Evaluation)", use_container_width=True)
         except:
             st.warning("Gambar Confusion Matrix belum diunggah.")
