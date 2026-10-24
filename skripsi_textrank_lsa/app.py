@@ -60,6 +60,13 @@ elif menu == "Metode TextRank":
         except:
             st.warning("Gambar Confusion Matrix belum diunggah.")
 
+    st.markdown("---")
+    st.subheader("Distribusi Skor Peringkat TextRank")
+    try:
+        st.image("skripsi_textrank_lsa/grafik_batang_top_textrank.png", caption="Distribusi Skor Top-10 Kalimat TextRank", use_container_width=True)
+    except:
+        st.warning("Gambar grafik batang TextRank belum diunggah.")
+
 elif menu == "Metode LSA":
     st.header("📊 Hasil Peringkasan Teks - Algoritma LSA (Latent Semantic Analysis)")
     st.write("Menampilkan *Top-10* kalimat ringkasan keluhan utama berdasarkan reduksi matriks konsep tersembunyi (*TruncatedSVD*).")
